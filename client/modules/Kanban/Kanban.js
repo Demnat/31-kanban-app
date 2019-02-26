@@ -7,7 +7,8 @@ import { createLane } from '../Lane/LaneActions';
 
 const Kanban = (props) => (
 	<div>
-		<button className={styles.AddLane}
+		<button 
+		//className={styles.AddLane}
 			onClick={() => props.createLane({
 				name: 'New lane',
 			})}>Add lane</button>
