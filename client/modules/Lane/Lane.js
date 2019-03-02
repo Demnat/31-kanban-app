@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import NotesContainer from '../Note/NotesContainer';
 import Edit from '../../components/Edit';
+import { editLane } from './LaneActions';
 
 import styles from './Lane.css';
 
