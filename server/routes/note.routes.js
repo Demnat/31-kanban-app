@@ -7,7 +7,7 @@ const router = new Router();
 router.route('/notes').post(NoteController.addNote);
 
 // Change task note
-router.route('/notes/:noteId').post(NoteController.changeTaskNote);
+router.route('/notes/:noteId').put(NoteController.changeTaskNote);
 
 // Delete a Note by noteId
 router.route('/notes/:noteId').delete(NoteController.deleteNote);

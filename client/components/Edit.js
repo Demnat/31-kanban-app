@@ -40,6 +40,7 @@ export default class Edit extends Component {
         );
     }
     render() {
+        console.log("editing ", this.props);
         return (
             <div 
             // className={this.props.className}

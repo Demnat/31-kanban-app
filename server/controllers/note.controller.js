@@ -50,8 +50,8 @@ export function changeTaskNote(req, res) {
     if (err) {
       res.status(500).send(err);
     }
-    
-    note.task = req.body.task;
+    console.log(req.body)
+    note.task = req.body.note.task;
     note.save((err, saved) => {
       if (err) {
         res.status(500).send(err);

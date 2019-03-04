@@ -50,7 +50,8 @@ export function changeNameLane(req, res) {
       res.status(500).send(err);
     }
     
-    lane.name = req.body.name;
+    console.log (req.body);
+    lane.name = req.body.lane.name;
     lane.save((err, saved) => {
       if (err) {
         res.status(500).send(err);
