@@ -6,11 +6,17 @@ import { editLane } from './LaneActions';
 
 import styles from './Lane.css';
 
-const Lane = (props) => {
-  const { lane, laneNotes, updateLane, addNote, deleteLane, editLane } = props;
-  const laneId = lane.id;
+class Lane extends React.Component {
+	constructor(props) {
+		super(props);
+		this.props = props;
+	}
 
-  return (
+  render() {
+  const { connectDropTarget, lane, laneNotes, updateLane, addNote, deleteLane, editLane } = props;
+  const laneId = lane.id;
+ 
+  return connectDropTarget(
     <div className={styles.Lane}>
       <div className={styles.LaneHeader}>
         <div className={styles.LaneAddNote}>
@@ -34,6 +40,7 @@ const Lane = (props) => {
       />
     </div>
   );
+}
 };
 
 Lane.propTypes = {
@@ -42,6 +49,7 @@ Lane.propTypes = {
   addNote: PropTypes.func,
   updateLane: PropTypes.func,
   deleteLane: PropTypes.func,
+  // connectDropTarget: PropTypes.func,
 };
 
 export default Lane;

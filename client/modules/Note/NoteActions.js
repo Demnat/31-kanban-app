@@ -6,6 +6,7 @@ export const CREATE_NOTES = 'CREATE_NOTES';
 export const UPDATE_NOTE = 'UPDATE_NOTE';
 export const DELETE_NOTE = 'DELETE_NOTE';
 export const EDIT_NOTE = 'EDIT_NOTE';
+export const MOVE_WITHIN_LANE = 'MOVE_NOTES';
 
 
 // Export Actions
@@ -24,7 +25,6 @@ export function createNoteRequest(note, laneId) {
         });
     };
 }
-
 
 export function createNotes(notesData) {
     return {
@@ -47,12 +47,12 @@ export function updateNoteRequest(note) {
             note: {
                 task: note.task,
                 ...note
-            }}).then(noteResp => {
+            }
+        }).then(noteResp => {
             dispatch(updateNote(noteResp));
         });
     };
 }
-
 
 export function deleteNote(noteId, laneId) {
     return {
@@ -71,9 +71,18 @@ export function deleteNoteRequest(noteId, laneId) {
 }
 
 export function editNote(noteId) {
-    console.log("edit note",noteId);
+    console.log("edit note", noteId);
     return {
         type: EDIT_NOTE,
         noteId,
+    };
+}
+
+export function moveWithinLane(laneId, targetId, sourceId) {
+    return {
+        type: MOVE_WITHIN_LANE,
+        laneId,
+        targetId,
+        sourceId,
     };
 }
