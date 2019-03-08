@@ -22,11 +22,12 @@ class Note extends React.Component {
 			connectDropTarget, 
 			isDragging,
 			editing, 
-			children } = this.props;
-
+			children,
+			didDrop } = this.props;
+	    
 		// jeśli edytujemy to przepuszczamy komponent (uniemożliwiamy tym samym przeciąganie komponentu edytowanego)
 		const dragSource = editing ? a => a : connectDragSource;  //????
-
+		
 		return dragSource(connectDropTarget(
 			<li 
 				className={styles.Note}
@@ -50,6 +51,7 @@ const noteSource = {
 	isDragging(props, monitor) {
 		return props.id === monitor.getItem().id;
 	}
+
 };
 
 const noteTarget = {
@@ -59,7 +61,7 @@ const noteTarget = {
 		if (targetProps.id !== sourceProps.id) {
 			targetProps.moveWithinLane(targetProps.laneId, targetProps.id, sourceProps.id);
 		}
-	}
+	},
 };
 
 Note.propTypes = {
@@ -71,7 +73,8 @@ export default compose(
 		connectDragSource: connect.dragSource(),
 		isDragging: monitor.isDragging()
 	})),
-	DropTarget(ItemTypes.NOTE, noteTarget, (connect) => ({
-		connectDropTarget: connect.dropTarget()
+	DropTarget(ItemTypes.NOTE, noteTarget, (connect,monitor) => ({
+		connectDropTarget: connect.dropTarget(),
+		didDrop:monitor.didDrop()
 	}))
 )(Note);

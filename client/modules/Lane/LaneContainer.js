@@ -34,7 +34,7 @@ const noteTarget = {
                 sourceLaneId,
             );
         }
-    },
+    }
 };
 
 export default compose(
