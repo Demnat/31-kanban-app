@@ -85,7 +85,6 @@ export function deleteLaneRequest(laneId) {
 }
 
 export function editLane(laneId) {
-    console.log("edit lane", laneId);
     return {
         type: EDIT_LANE,
         laneId

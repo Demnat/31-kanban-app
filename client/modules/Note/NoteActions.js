@@ -41,7 +41,7 @@ export function updateNote(note) {
 }
 
 export function updateNoteRequest(note) {
-    console.log(note)
+    // console.log(note)
     return (dispatch) => {
         return callApi(`notes/${note.id}`, 'put', {
             note: {
@@ -71,7 +71,6 @@ export function deleteNoteRequest(noteId, laneId) {
 }
 
 export function editNote(noteId) {
-    console.log("edit note", noteId);
     return {
         type: EDIT_NOTE,
         noteId,
@@ -86,3 +85,4 @@ export function moveWithinLane(laneId, targetId, sourceId) {
         sourceId,
     };
 }
+

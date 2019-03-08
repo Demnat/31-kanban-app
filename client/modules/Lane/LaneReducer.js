@@ -17,15 +17,13 @@ function moveNotes(array, sourceNoteId, targetNoteId) {
 }
 
 export default function lanes(state = initialState, action) {
-	console.log("lane reducer", action);
+
 	switch (action.type) {
 		case CREATE_LANE:
 		case UPDATE_LANE:
 			return { ...state, [action.lane.id]: action.lane };
 		case EDIT_LANE: {
 			const lane = { ...state[action.laneId], editing: true };
-			console.log(action);
-			console.log(lane);
 			return { ...state, [action.laneId]: lane };
 		}
 		case CREATE_LANES:

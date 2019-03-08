@@ -13,7 +13,7 @@ class Lane extends React.Component {
 	}
 
   render() {
-  const { connectDropTarget, lane, laneNotes, updateLane, addNote, deleteLane, editLane } = props;
+  const { connectDropTarget, lane, laneNotes, updateLane, addNote, deleteLane, editLane } = this.props;
   const laneId = lane.id;
  
   return connectDropTarget(
@@ -49,7 +49,6 @@ Lane.propTypes = {
   addNote: PropTypes.func,
   updateLane: PropTypes.func,
   deleteLane: PropTypes.func,
-  // connectDropTarget: PropTypes.func,
 };
 
 export default Lane;

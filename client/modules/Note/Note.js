@@ -29,7 +29,7 @@ class Note extends React.Component {
 
 		return dragSource(connectDropTarget(
 			<li 
-				className={styles.Note}
+				// className={styles.Note}
 				style={{
 					opacity: isDragging ? 0 : 1
 				}} 
