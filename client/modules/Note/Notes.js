@@ -6,12 +6,13 @@ import Edit from '../../components/Edit';
 
 const Notes = ({ notes, laneId, editNote, updateNote, deleteNote, moveWithinLane }) => (
     <ul 
-    // className={styles.Notes}
+        className={styles.Notes}
     >{notes.map((note) =>
         <Note
             id={note.id}
             key={note.id}
             moveWithinLane={moveWithinLane}
+            // dropNote={dropNote}
             laneId={laneId}
         >
             <Edit

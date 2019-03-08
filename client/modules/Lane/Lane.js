@@ -19,9 +19,7 @@ class Lane extends React.Component {
   return connectDropTarget(
     <div className={styles.Lane}>
       <div className={styles.LaneHeader}>
-        <div className={styles.LaneAddNote}>
-          <button onClick={() => addNote({ task: "New Note"}, laneId)}>Add Note</button>
-        </div>
+        
         <Edit
           className={styles.LaneName}
           editing={lane.editing}
@@ -30,8 +28,9 @@ class Lane extends React.Component {
 
           onUpdate={name => updateLane({ ...lane, name, editing: false })}
         />
-        <div className={styles.LaneDelete}>
-          <button onClick={() => deleteLane(laneId)}>Remove Lane</button>
+		<div className={styles.ButtonsContainer}>
+          <button className={styles.LaneButton} onClick={() => addNote({ task: "New Note"}, laneId)}>Add Note</button>
+          <button className={styles.LaneButton} onClick={() => deleteLane(laneId)}>Remove Lane</button>
         </div>
       </div>
       <NotesContainer

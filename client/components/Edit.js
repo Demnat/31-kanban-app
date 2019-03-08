@@ -31,6 +31,7 @@ export default class Edit extends Component {
     renderEdit = () => {
         return (
             <input
+                className={styles.value}
                 type="text"
                 autoFocus
                 defaultValue={this.props.value}
