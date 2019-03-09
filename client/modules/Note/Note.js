@@ -27,7 +27,7 @@ class Note extends React.Component {
 	    
 		// jeśli edytujemy to przepuszczamy komponent (uniemożliwiamy tym samym przeciąganie komponentu edytowanego)
 		const dragSource = editing ? a => a : connectDragSource;  //????
-		
+		console.log(isDragging);
 		return dragSource(connectDropTarget(
 			<li 
 				className={styles.Note}
@@ -75,6 +75,6 @@ export default compose(
 	})),
 	DropTarget(ItemTypes.NOTE, noteTarget, (connect,monitor) => ({
 		connectDropTarget: connect.dropTarget(),
-		didDrop:monitor.didDrop()
+		didDrop: monitor.didDrop()
 	}))
 )(Note);
