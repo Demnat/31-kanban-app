@@ -32,7 +32,7 @@ class Note extends React.Component {
 			<li 
 				className={styles.Note}
 				style={{
-					opacity: isDragging ? 0 : 1
+					// opacity: isDragging ? 0 : 1
 				}} 
 			>
 				{children}
@@ -57,12 +57,18 @@ const noteSource = {
 const noteTarget = {
 	hover(targetProps, monitor) {
 		const sourceProps = monitor.getItem();
-
+		console.log(targetProps.id, sourceProps.id, 'noteTarget w note')
 		if (targetProps.id !== sourceProps.id) {
 			targetProps.moveWithinLane(targetProps.laneId, targetProps.id, sourceProps.id);
 		}
 	},
+	// drop(targetProps, monitor) {
+	// 	const sourceProps = monitor.getItem();
 
+	// 	if (targetProps.id !== sourceProps.id) {
+	// 		targetProps.moveWithinLane(targetProps.laneId, targetProps.id, sourceProps.id);
+	// 	}
+	// },
 
 };
 
