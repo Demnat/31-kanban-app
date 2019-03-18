@@ -31,9 +31,9 @@ class Note extends React.Component {
 		return dragSource(connectDropTarget(
 			<li 
 				className={styles.Note}
-				style={{
+				// style={{
 					// opacity: isDragging ? 0 : 1
-				}} 
+				// }} 
 			>
 				{children}
 			</li> 
@@ -57,8 +57,8 @@ const noteSource = {
 const noteTarget = {
 	hover(targetProps, monitor) {
 		const sourceProps = monitor.getItem();
-		console.log(targetProps.id, sourceProps.id, 'noteTarget w note')
 		if (targetProps.id !== sourceProps.id) {
+			console.log(targetProps, sourceProps, 'noteTarget w note');
 			targetProps.moveWithinLane(targetProps.laneId, targetProps.id, sourceProps.id);
 		}
 	},

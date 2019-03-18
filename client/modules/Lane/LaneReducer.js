@@ -46,7 +46,7 @@ export default function lanes(state = initialState, action) {
 		case MOVE_WITHIN_LANE: {
 			const newLane = { ...state[action.laneId] };
 			newLane.notes = moveNotes(newLane.notes, action.sourceId, action.targetId);
-
+			console.log("laneReducer" , newLane);
 			return { ...state, [action.laneId]: newLane };
 		}
 		case MOVE_BETWEEN_LANES: {

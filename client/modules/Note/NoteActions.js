@@ -87,11 +87,4 @@ export function moveWithinLane(laneId, targetId, sourceId) {
 }
 
 
-// export function moveWithinLaneRequest(laneId, targetId, sourceId) {
-//     return {
-//         type: MOVE_WITHIN_LANE,
-//         laneId,
-//         targetId,
-//         sourceId,
-//     };
-// }
+

@@ -40,14 +40,14 @@ const noteTarget = {
     drop(targetProps, monitor) {
         const sourceProps = monitor.getItem();
         const { id: noteId, laneId: sourceLaneId } = sourceProps;
-        console.log("lane drop container" ,targetProps);
+       
         if(sourceLaneId !== targetProps.lane.id) {
             targetProps.moveBetweenLanes(targetProps.lane.id, noteId, sourceLaneId);
         } 
         else {
             targetProps.moveWithinLane(targetProps.lane.id, noteId, sourceLaneId);
         }
-
+        console.log("lane drop container", targetProps);
     }
 };
 
