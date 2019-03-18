@@ -7,9 +7,12 @@ import { DropTarget } from 'react-dnd';
 import ItemTypes from '../Kanban/itemTypes';
 
 const mapDispatchToProps = {
-  onValueClick: editNote,
-  onUpdate: updateNoteRequest,
-  onDelete: deleteNoteRequest,
+  // onValueClick: editNote,
+  editNote: editNote,
+  // onUpdate: updateNoteRequest,
+  updateNote: updateNoteRequest,
+  // onDelete: deleteNoteRequest,
+  deleteNote: deleteNoteRequest,
   moveWithinLane,
   // dropNote,
 };
@@ -30,14 +33,14 @@ const noteTarget = {
    };
 
 
-export default compose(
-    connect(null, mapDispatchToProps),
-    DropTarget(ItemTypes.NOTE, noteTarget, (dropConnect) => ({
-      connectDropTarget: dropConnect.dropTarget()
-    }))
-  )(Notes);
+// export default compose(
+//     connect(null, mapDispatchToProps),
+//     DropTarget(ItemTypes.NOTE, noteTarget, (dropConnect) => ({
+//       connectDropTarget: dropConnect.dropTarget()
+//     }))
+//   )(Notes);
 
-// export default connect(
-//   null,
-//   mapDispatchToProps
-// )(Notes);
+export default connect(
+  null,
+  mapDispatchToProps
+)(Notes);

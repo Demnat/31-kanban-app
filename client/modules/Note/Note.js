@@ -62,6 +62,8 @@ const noteTarget = {
 			targetProps.moveWithinLane(targetProps.laneId, targetProps.id, sourceProps.id);
 		}
 	},
+
+
 };
 
 Note.propTypes = {
